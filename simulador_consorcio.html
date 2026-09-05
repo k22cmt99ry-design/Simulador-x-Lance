@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de parcela e lance · Vértice Consórcios</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Simulador Vértice">
+<meta name="theme-color" content="#123F35">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10211C;
+    --pine:#123F35;
+    --pine-2:#1C5A4B;
+    --moss:#2F6F5E;
+    --brass:#C2873B;
+    --brass-2:#D89B45;
+    --paper:#F1F4F0;
+    --paper-2:#E7ECE6;
+    --surface:#FFFFFF;
+    --line:#D3DDD6;
+    --muted:#566860;
+    --shadow:0 1px 2px rgba(16,33,28,.04), 0 12px 32px -12px rgba(16,33,28,.16);
+    --radius:18px;
+    --radius-field:11px;
+    --claro:#EAF1ED;
+    --display:"Bricolage Grotesque", system-ui, sans-serif;
+    --corpo:"IBM Plex Sans", system-ui, sans-serif;
+    --dados:"IBM Plex Mono", monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  [hidden]{display:none !important}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--corpo);font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .num{font-family:var(--dados);font-feature-settings:"tnum" 1}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 24px 64px}
+
+  /* ---------- marca ---------- */
+  .marca{display:flex;align-items:center;gap:.6em;margin-bottom:34px}
+  .marca svg{display:block;height:34px;width:34px}
+  .marca span{font-family:var(--display);font-weight:800;font-size:1.18rem;
+    letter-spacing:.02em;color:var(--pine)}
+
+  .eyebrow{font-family:var(--dados);font-size:.74rem;font-weight:500;
+    text-transform:uppercase;letter-spacing:.14em;color:var(--brass);
+    display:flex;align-items:center;gap:.6em;margin:0 0 14px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);flex:0 0 26px}
+
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4.6vw,3.2rem);
+    line-height:1.06;letter-spacing:-.02em;margin:0 0 14px;max-width:22ch;color:var(--ink)}
+  .lead{font-size:1.16rem;color:var(--muted);margin:0 0 28px;max-width:58ch}
+
+  h2.etapa{font-family:var(--display);font-weight:700;font-size:1.5rem;
+    letter-spacing:-.01em;margin:0 0 6px;color:var(--ink)}
+  p.etapa-sub{font-size:.98rem;color:var(--muted);margin:0 0 24px;max-width:62ch}
+
+  section.etapa{margin-top:56px}
+  section.etapa:first-of-type{margin-top:8px}
+
+  /* ---------- layout ---------- */
+  .grid{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+  /* ---------- painel ---------- */
+  .card{background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow)}
+  .painel{padding:1.5rem}
+  .painel h2{font-family:var(--display);font-weight:700;font-size:1.08rem;
+    color:var(--pine);margin:0 0 1.1rem}
+  .field{margin-bottom:1.1rem}
+  .field:last-child{margin-bottom:0}
+  .field > label{display:block;font-size:.9rem;font-weight:600;margin-bottom:.4rem;color:var(--ink)}
+  .hint{font-size:.8rem;color:var(--muted);margin:.45rem 0 0;line-height:1.45}
+  .combo{display:flex;gap:8px}
+  input[type=text], input[type=number], select{width:100%;padding:.7em .85em;border:1.5px solid var(--line);
+    border-radius:var(--radius-field);background:var(--surface);color:var(--ink);
+    font-family:var(--dados);font-feature-settings:"tnum" 1;font-size:16px}
+  select{font-family:var(--corpo);font-size:.88rem;cursor:pointer}
+  input[type=text]:focus-visible, input[type=number]:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible{
+    outline:2px solid var(--brass);outline-offset:2px}
+  input[type=text]:hover, input[type=number]:hover, select:hover{border-color:#BFCCC3}
+  .seg{display:flex;gap:6px}
+  .seg button{flex:1;min-height:44px;padding:.6em .5em;cursor:pointer;transition:.2s;
+    border:1.5px solid var(--line);border-radius:var(--radius-field);
+    background:transparent;color:var(--pine);font-family:var(--corpo);
+    font-weight:600;font-size:.88rem}
+  .seg button:hover{border-color:var(--pine)}
+  .seg button[aria-pressed=true]{background:var(--brass);border-color:var(--brass);color:#1c1305}
+
+  /* ---------- destaque em pinheiro ---------- */
+  .destaque{background:var(--pine);border-radius:var(--radius);padding:1.6rem 1.7rem;
+    box-shadow:var(--shadow);margin-bottom:20px}
+  .destaque .eyebrow{color:var(--brass-2)}
+  .destaque .eyebrow::before{background:var(--brass-2)}
+  .valor{font-family:var(--dados);font-feature-settings:"tnum" 1;font-weight:500;
+    color:#fff;font-size:clamp(2.1rem,6.2vw,3.4rem);line-height:1.05;letter-spacing:-.03em}
+  .valor .cents{font-size:.46em;color:rgba(234,241,237,.62)}
+  .sob{font-size:.9rem;color:rgba(234,241,237,.8);margin:.7rem 0 0;max-width:52ch}
+
+  /* ---------- indicadores ---------- */
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:0}
+  .stat{padding:1rem 1.15rem}
+  .stat .k{font-size:.82rem;color:var(--muted);margin-bottom:.3rem}
+  .stat .v{font-family:var(--dados);font-feature-settings:"tnum" 1;
+    font-size:1.15rem;font-weight:500;color:var(--pine);letter-spacing:-.01em}
+  .stat.acento .v{color:var(--brass)}
+  @media (max-width:620px){
+    .stats{grid-template-columns:1fr;gap:8px}
+    .stat{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:.75rem 1rem}
+    .stat .k{margin-bottom:0}
+  }
+
+  .aviso{margin-top:14px;padding:.85rem 1rem;border-radius:12px;
+    background:var(--paper-2);border:1px solid var(--line);
+    font-size:.84rem;color:var(--muted);line-height:1.55}
+
+  /* ---------- rodapé ---------- */
+  .rodape{margin-top:48px;border-top:1px solid var(--line);padding-top:24px;
+    display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .rodape p{font-size:.8rem;color:var(--muted);margin:0 0 .6rem;max-width:62ch;line-height:1.6}
+  .btn-ghost{display:inline-block;font-family:var(--corpo);font-weight:600;font-size:.9rem;
+    padding:.7em 1.2em;border-radius:12px;text-decoration:none;
+    background:transparent;color:var(--pine);border:1.5px solid var(--line);transition:.2s;
+    white-space:nowrap}
+  .btn-ghost:hover{border-color:var(--pine);background:rgba(18,63,53,.04)}
+
+  /* ---------- barra fixa da parcela ---------- */
+  .barra{position:sticky;top:0;z-index:20;background:var(--pine);
+    box-shadow:0 1px 0 rgba(255,255,255,.08)}
+  .barra-inner{max-width:1120px;margin:0 auto;padding:12px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .barra .k{font-size:.72rem;color:rgba(234,241,237,.62);text-transform:uppercase;letter-spacing:.1em}
+  .barra .v{font-family:var(--dados);font-feature-settings:"tnum" 1;font-weight:500;
+    font-size:1.3rem;color:#fff}
+  .barra .v.brass{color:var(--brass-2);font-size:1.05rem}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <div class="barra-inner">
+    <div>
+      <div class="k">Parcela do plano contratado</div>
+      <div class="v" id="stickyParcela">R$ 0,00</div>
+    </div>
+    <div style="text-align:right">
+      <div class="v brass" id="stickyParcelaLance"></div>
+      <div class="k" id="stickyParcelaLanceLabel"></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="marca">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vértice Consórcios">
+      <path d="M4 34 L20 6 L36 34" stroke="#123F35" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M13 34 L20 21 L27 34" stroke="#C2873B" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <span>Vértice Consórcios</span>
+  </div>
+
+  <p class="eyebrow">Simulador</p>
+  <h1>Quanto fica a parcela do seu consórcio</h1>
+  <p class="lead">Informe o crédito, o prazo e o plano para calcular a parcela contratada, monte uma simulação de lance e veja a nova parcela resultante.</p>
+
+  <!-- ============ ETAPA 1 — PARCELA DO PLANO ============ -->
+  <section class="etapa">
+    <h2 class="etapa">1 · Parcela do plano</h2>
+    <p class="etapa-sub">Dados do crédito contratado. Define o valor da parcela mensal e o total pago ao final do plano.</p>
+
+    <div class="grid">
+      <div class="card painel">
+        <h2>Parâmetros do plano</h2>
+
+        <div class="field">
+          <label for="credito">Crédito (R$)</label>
+          <input type="text" id="credito" inputmode="decimal" value="300.000,00">
+        </div>
+
+        <div class="field">
+          <label for="prazoCliente">Prazo do cliente</label>
+          <div class="combo">
+            <input type="text" id="prazoCliente" inputmode="numeric" value="206">
+            <select disabled style="flex:0 0 96px"><option>meses</option></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="prazoGrupo">Prazo do grupo</label>
+          <div class="combo">
+            <input type="text" id="prazoGrupo" inputmode="numeric" value="216">
+            <select disabled style="flex:0 0 96px"><option>meses</option></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="txAdm">Taxa de administração (%)</label>
+          <input type="text" id="txAdm" inputmode="decimal" value="28,50">
+        </div>
+
+        <div class="field">
+          <label for="segPrestamista">Seguro prestamista (% a.m.)</label>
+          <input type="text" id="segPrestamista" inputmode="decimal" value="0,03245">
+        </div>
+
+        <div class="field">
+          <label id="planoLabel">Plano</label>
+          <div class="seg" role="group" aria-labelledby="planoLabel" id="planoToggle">
+            <button type="button" data-val="LINEAR" aria-pressed="true">Linear</button>
+            <button type="button" data-val="DEGRAU" aria-pressed="false">Degrau</button>
+          </div>
+          <p class="hint">Degrau: parcela menor na 1ª metade do prazo e maior na 2ª.</p>
+        </div>
+
+        <div class="field">
+          <label id="tipoParcelaLabel">Tipo de parcela</label>
+          <div class="seg" role="group" aria-labelledby="tipoParcelaLabel" id="tipoParcelaToggle">
+            <button type="button" data-val="INTEGRAL" aria-pressed="true">Integral</button>
+            <button type="button" data-val="REDUZIDA" aria-pressed="false">Reduzida</button>
+          </div>
+          <p class="hint">Reduzida: parcela calculada a 70% até a contemplação.</p>
+        </div>
+      </div>
+
+      <section>
+        <div class="destaque">
+          <p class="eyebrow">Parcela mensal</p>
+          <div class="valor" id="out-parcelaBase">R$ 0<span class="cents">,00</span></div>
+          <p class="sob" id="out-parcelaBaseRange">1ª – 206ª parcela</p>
+        </div>
+
+        <div class="stats" id="statsBase">
+          <div class="card stat" id="out-parcelaBaseSegundaWrap" hidden>
+            <div class="k" id="out-parcelaBaseSegundaLabel">2ª faixa</div>
+            <div class="v" id="out-parcelaBaseSegunda">—</div>
+          </div>
+          <div class="card stat"><div class="k">Total a pagar no plano</div><div class="v" id="out-totalPagarBase">—</div></div>
+          <div class="card stat acento"><div class="k">Custo sobre o crédito</div><div class="v" id="out-custoBase">—</div></div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============ ETAPA 2 — SIMULAÇÃO DE LANCE ============ -->
+  <section class="etapa">
+    <h2 class="etapa">2 · Simulação de lance</h2>
+    <p class="etapa-sub">Opcional. Some um lance para tentar a contemplação, com ou sem upgrade de crédito, e veja quanto representa em recursos próprios e em embutido.</p>
+
+    <div class="grid">
+      <div class="card painel">
+        <h2>Parâmetros do lance</h2>
+
+        <div class="field">
+          <label id="upgradeLabel">Fazer upgrade de crédito?</label>
+          <div class="seg" role="group" aria-labelledby="upgradeLabel" id="upgradeToggle">
+            <button type="button" data-val="NÃO" aria-pressed="true">Não</button>
+            <button type="button" data-val="SIM" aria-pressed="false">Sim</button>
+          </div>
+        </div>
+
+        <div class="field" id="upgradeTipoField" hidden>
+          <label for="upgradeTipo">Tipo de upgrade</label>
+          <select id="upgradeTipo">
+            <option value="Com UpGrade">Com upgrade (crédito maior)</option>
+            <option value="Contratado">Mantém crédito contratado</option>
+          </select>
+        </div>
+
+        <div class="field" id="upgradePctField" hidden>
+          <label for="upgradePct">Percentual sobre o crédito (%)</label>
+          <input type="text" id="upgradePct" inputmode="decimal" value="30">
+        </div>
+
+        <div class="field">
+          <label id="tipoLanceLabel">Tipo de lance</label>
+          <div class="seg" role="group" aria-labelledby="tipoLanceLabel" id="tipoLanceToggle">
+            <button type="button" data-val="INTEGRAL" aria-pressed="true">Integral</button>
+            <button type="button" data-val="REDUZIDO" aria-pressed="false">Reduzido</button>
+          </div>
+          <p class="hint">Reduzido usa o valor da parcela do plano para converter o lance.</p>
+        </div>
+
+        <div class="field">
+          <label for="lanceNewcon">Lance ofertado (parcelas do grupo)</label>
+          <input type="text" id="lanceNewcon" inputmode="decimal" value="0">
+          <p class="hint">Quantidade de parcelas do grupo oferecida — é convertida para parcelas no prazo do cliente.</p>
+        </div>
+
+        <div class="field">
+          <label for="pctEmbutido">% do lance embutido</label>
+          <input type="text" id="pctEmbutido" inputmode="decimal" value="25">
+          <p class="hint">Parte do lance paga com o próprio crédito, não sai do bolso.</p>
+        </div>
+
+        <div class="field">
+          <label for="parcelasPagas">Parcelas já pagas</label>
+          <input type="text" id="parcelasPagas" inputmode="numeric" value="1">
+        </div>
+
+        <div class="field">
+          <label for="parcelasFuro">Parcelas puladas (furo) pelo lance</label>
+          <input type="text" id="parcelasFuro" inputmode="numeric" value="10">
+        </div>
+
+        <div class="field">
+          <label id="diluirLabel">Diluir o lance nas parcelas restantes?</label>
+          <div class="seg" role="group" aria-labelledby="diluirLabel" id="diluirToggle">
+            <button type="button" data-val="SIM" aria-pressed="true">Sim</button>
+            <button type="button" data-val="NÃO" aria-pressed="false">Não</button>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="destaque">
+          <p class="eyebrow">Valor do lance</p>
+          <div class="valor" id="out-valorLance">R$ 0<span class="cents">,00</span></div>
+          <p class="sob" id="out-parcelasLance">equivalente a 0 parcela(s) do cliente</p>
+        </div>
+
+        <div class="stats">
+          <div class="card stat"><div class="k">Lance embutido</div><div class="v" id="out-lanceEmbutido">—</div></div>
+          <div class="card stat acento"><div class="k">Recursos próprios</div><div class="v" id="out-lanceProprio">—</div></div>
+          <div class="card stat"><div class="k">% do lance sobre o crédito</div><div class="v" id="out-pctLanceCredito">—</div></div>
+          <div class="card stat"><div class="k">% de rec. próprios sobre o crédito</div><div class="v" id="out-pctLanceProprio">—</div></div>
+          <div class="card stat" id="out-creditoAtualizadoWrap" hidden><div class="k">Crédito atualizado</div><div class="v" id="out-creditoAtualizado">—</div></div>
+          <div class="card stat"><div class="k">Crédito disponível após o embutido</div><div class="v" id="out-creditoDisponivel">—</div></div>
+        </div>
+        <p class="aviso" id="lanceNote"></p>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============ ETAPA 3 — NOVA PARCELA ============ -->
+  <section class="etapa">
+    <h2 class="etapa">3 · Parcela após o lance</h2>
+    <p class="etapa-sub">Nova parcela a partir do mês seguinte às parcelas puladas pelo lance, considerando o que já foi pago e o saldo restante do plano.</p>
+
+    <div class="destaque" style="max-width:640px">
+      <p class="eyebrow">Nova parcela mensal</p>
+      <div class="valor" id="out-novaParcela">R$ 0<span class="cents">,00</span></div>
+      <p class="sob" id="out-novaParcelaRange">—</p>
+    </div>
+
+    <div class="stats" style="max-width:640px;grid-template-columns:repeat(2,1fr)">
+      <div class="card stat" id="out-novaParcelaSegundaWrap" hidden>
+        <div class="k" id="out-novaParcelaSegundaLabel">2ª metade do plano</div>
+        <div class="v" id="out-novaParcelaSegunda">—</div>
+      </div>
+      <div class="card stat"><div class="k">Prazo restante em parcelas normais</div><div class="v" id="out-prazoRestante">—</div></div>
+    </div>
+    <p class="aviso" id="novaParcelaNote" style="max-width:640px"></p>
+  </section>
+
+  <div class="rodape">
+    <div>
+      <p>Simulação com base nas fórmulas do simulador interno (crédito, taxa de administração, seguro prestamista, plano Linear/Degrau e lance). Os valores são estimativas geradas por cálculo matemático e não constituem proposta.</p>
+      <p>A proposta oficial é sempre confirmada por nossos especialistas junto à administradora, na assembleia de contemplação. As administradoras de consórcio são autorizadas e fiscalizadas pelo Banco Central do Brasil.</p>
+    </div>
+    <a class="btn-ghost" href="https://wa.me/5511942459170">Falar com nossos especialistas</a>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var fmtBRL = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+  var fmtNum = new Intl.NumberFormat('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  function el(id){ return document.getElementById(id); }
+
+  function parseNum(str){
+    if(typeof str === 'number') return str;
+    if(!str) return 0;
+    var s = String(str).trim().replace(/[R$\s]/g,'');
+    if(s.indexOf(',') > -1){ s = s.replace(/\./g,'').replace(',', '.'); }
+    var n = parseFloat(s);
+    return isNaN(n) ? 0 : n;
+  }
+  function moeda(v){ return fmtBRL.format(isFinite(v) ? v : 0); }
+  function grande(v){
+    var p = fmtNum.format(isFinite(v) ? v : 0).split(',');
+    return 'R$ ' + p[0] + '<span class="cents">,' + p[1] + '</span>';
+  }
+  function PCT(n, dec){
+    if(n===null || n===undefined || isNaN(n)) return '—';
+    return (n*100).toLocaleString('pt-BR', {minimumFractionDigits: dec===undefined?2:dec, maximumFractionDigits: dec===undefined?2:dec}) + '%';
+  }
+  function round0(n){ return Math.round(n); }
+
+  function seg(id, onChange){
+    var wrap = el(id);
+    var buttons = wrap.querySelectorAll('button');
+    function set(btn){
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true':'false'); });
+      onChange && onChange();
+      recalc();
+    }
+    buttons.forEach(function(b){ b.addEventListener('click', function(){ set(b); }); });
+    return {
+      get: function(){
+        var active = wrap.querySelector('button[aria-pressed=true]');
+        return active ? active.getAttribute('data-val') : null;
+      }
+    };
+  }
+
+  var planoT = seg('planoToggle');
+  var tipoParcelaT = seg('tipoParcelaToggle');
+  var upgradeT = seg('upgradeToggle', function(){
+    var on = upgradeT.get() === 'SIM';
+    el('upgradeTipoField').hidden = !on;
+    el('upgradePctField').hidden = !on;
+  });
+  var tipoLanceT = seg('tipoLanceToggle');
+  var diluirT = seg('diluirToggle');
+
+  ['credito','prazoCliente','prazoGrupo','txAdm','segPrestamista',
+   'upgradePct','lanceNewcon','pctEmbutido','parcelasPagas','parcelasFuro'
+  ].forEach(function(id){ el(id).addEventListener('input', recalc); });
+  el('upgradeTipo').addEventListener('change', recalc);
+
+  function parcelaLinearDegrau(credito, txAdm, prazo, seguro, plano){
+    if(plano === 'LINEAR'){
+      var faixa1 = (credito*txAdm + credito)*seguro + (credito*txAdm + credito)/prazo;
+      return {faixa1: faixa1, faixa2: 0};
+    } else {
+      var faixa1b = (credito*txAdm)/(prazo/2) + credito/prazo + (credito + credito*txAdm)*seguro;
+      var faixa2b = credito/prazo + (credito*txAdm + credito)*seguro;
+      return {faixa1: faixa1b, faixa2: faixa2b};
+    }
+  }
+
+  function recalc(){
+    // ---- ETAPA 1 ----
+    var credito = parseNum(el('credito').value);
+    var prazoCliente = parseNum(el('prazoCliente').value) || 1;
+    var prazoGrupo = parseNum(el('prazoGrupo').value) || 1;
+    var txAdm = parseNum(el('txAdm').value)/100;
+    var seguro = parseNum(el('segPrestamista').value)/100;
+    var plano = planoT.get();
+    var tipoParcela = tipoParcelaT.get();
+
+    var base = parcelaLinearDegrau(credito, txAdm, prazoCliente, seguro, plano);
+    var D23 = base.faixa1, J23 = base.faixa2;
+
+    var D13, J13, hasJ13 = false;
+    if(tipoParcela === 'INTEGRAL'){
+      D13 = D23; J13 = J23; hasJ13 = (plano==='DEGRAU');
+    } else {
+      if(plano === 'DEGRAU'){
+        D13 = ((credito*txAdm)/(prazoCliente/2) + (credito/prazoCliente))*0.7 + seguro*(credito*(1+txAdm));
+        J13 = (credito/prazoCliente)*0.7 + seguro*(credito*(1+txAdm));
+        hasJ13 = true;
+      } else {
+        D13 = (credito*(1+txAdm)/prazoCliente)*0.7 + seguro*(credito*(1+txAdm));
+        J13 = null; hasJ13 = false;
+      }
+    }
+
+    var D15 = (plano === 'LINEAR') ? D13*prazoCliente : D13*(prazoCliente/2) + J13*(prazoCliente/2);
+
+    el('out-parcelaBase').innerHTML = grande(D13);
+    el('stickyParcela').textContent = moeda(D13);
+    if(hasJ13){
+      el('out-parcelaBaseSegundaWrap').hidden = false;
+      el('out-parcelaBaseSegundaLabel').textContent = (Math.floor(prazoCliente/2)+1)+'ª – '+prazoCliente+'ª parcela';
+      el('out-parcelaBaseSegunda').textContent = moeda(J13);
+      el('out-parcelaBaseRange').textContent = '1ª – '+Math.floor(prazoCliente/2)+'ª parcela';
+    } else {
+      el('out-parcelaBaseSegundaWrap').hidden = true;
+      el('out-parcelaBaseRange').textContent = '1ª – '+prazoCliente+'ª parcela';
+    }
+    el('out-totalPagarBase').textContent = moeda(D15);
+    el('out-custoBase').textContent = credito>0 ? PCT((D15-credito)/credito,1) : '—';
+
+    // ---- ETAPA 2 ----
+    var upgrade = upgradeT.get();
+    var upgradeTipo = el('upgradeTipo').value;
+    var upgradePct = parseNum(el('upgradePct').value)/100;
+    var tipoLance = tipoLanceT.get();
+    var lanceNewcon = parseNum(el('lanceNewcon').value);
+    var pctEmbutido = parseNum(el('pctEmbutido').value)/100;
+    var parcelasPagas = parseNum(el('parcelasPagas').value) || 0;
+    var parcelasFuro = parseNum(el('parcelasFuro').value) || 0;
+    var diluir = diluirT.get();
+
+    var D19 = credito;
+    if(upgrade === 'SIM' && upgradeTipo === 'Com UpGrade'){ D19 = credito + credito*upgradePct; }
+    var lance23 = parcelaLinearDegrau(D19, txAdm, prazoCliente, seguro, plano);
+    var D23b = lance23.faixa1, J23b = lance23.faixa2;
+    var D25 = (plano==='LINEAR') ? D23b*prazoCliente : D23b*(prazoCliente/2) + J23b*(prazoCliente/2);
+
+    var J48 = round0((lanceNewcon/prazoGrupo)*prazoCliente);
+
+    var N25 = (plano === 'LINEAR') ? (D23b - D13)*parcelasPagas
+        : (parcelasPagas < prazoCliente/2 ? (D23b - D13)*parcelasPagas : null);
+    var N26 = (N25===null) ? 0 : N25/(prazoCliente - parcelasPagas);
+
+    var N23;
+    if(plano === 'LINEAR'){
+      N23 = (D23b + N26)*J48;
+    } else if(J48 > prazoCliente/2){
+      N23 = (prazoCliente/2)*(J23b + N26) + (J48 - prazoCliente/2)*(D23b + N26);
+    } else {
+      N23 = J48*(J23b + N26);
+    }
+
+    var N46;
+    if(tipoLance === 'REDUZIDO'){
+      if(plano === 'LINEAR'){ N46 = J48 * D13; }
+      else if(J48 <= prazoCliente/2){ N46 = J48 * J13; }
+      else { N46 = (J48 - prazoCliente/2)*D13 + (prazoCliente/2)*J13; }
+    } else {
+      N46 = N23;
+    }
+
+    var J42 = credito>0 ? N46/credito : null;
+    var J50 = pctEmbutido * D19;
+    var N50 = N46 - D19*pctEmbutido;
+    var N42 = credito>0 ? N50/credito : null;
+    var N54 = credito*(1+upgradePct);
+    var N58 = credito - J50;
+
+    el('out-valorLance').innerHTML = grande(N46);
+    el('out-parcelasLance').textContent = 'equivalente a '+J48+' parcela(s) do cliente';
+    el('out-lanceEmbutido').textContent = moeda(J50);
+    el('out-lanceProprio').textContent = moeda(N50);
+    el('out-pctLanceCredito').textContent = PCT(J42,2);
+    el('out-pctLanceProprio').textContent = PCT(N42,2);
+    el('out-creditoAtualizadoWrap').hidden = (upgrade!=='SIM');
+    el('out-creditoAtualizado').textContent = moeda(N54);
+    el('out-creditoDisponivel').textContent = moeda(N58);
+
+    if(lanceNewcon <= 0){
+      el('lanceNote').textContent = 'Informe um lance ofertado para simular a contemplação.';
+    } else if(N50 < 0){
+      el('lanceNote').textContent = 'O lance embutido sozinho já cobre o valor do lance — não é necessário aporte de recursos próprios.';
+    } else {
+      el('lanceNote').textContent = 'Recursos próprios necessários: ' + moeda(N50) + '.';
+    }
+
+    // ---- ETAPA 3 ----
+    var denom = prazoCliente - parcelasPagas - parcelasFuro;
+    var J63 = null, N63 = null, temFaixa2 = false;
+    var podeCalcular = lanceNewcon > 0 && denom > 0;
+
+    if(podeCalcular){
+      if(tipoLance === 'REDUZIDO'){
+        if(plano === 'LINEAR'){
+          J63 = (diluir==='SIM') ? (D25 - N46 - D13*parcelasPagas)/denom : D23b;
+        } else {
+          temFaixa2 = true;
+          if(diluir==='SIM'){
+            J63 = (D23b + (parcelasPagas*(D23b-D13))/(prazoCliente-parcelasPagas)) - (N46 - parcelasFuro*J23b)/denom;
+            N63 = (J23b + (parcelasPagas*(D23b-D13))/(prazoCliente-parcelasPagas)) - (N46 - parcelasFuro*J23b)/denom;
+          } else {
+            J63 = D23b + (parcelasPagas*(D23b-D13)/(prazoCliente-parcelasPagas));
+            N63 = J23b + (parcelasPagas*(D23b-D13)/(prazoCliente-parcelasPagas));
+          }
+        }
+      } else {
+        if(plano === 'LINEAR'){
+          J63 = (diluir==='SIM') ? (D25 - N46 - D13*parcelasPagas)/denom : (D23b + N26);
+        } else {
+          temFaixa2 = true;
+          if(diluir==='SIM'){
+            J63 = (D23b + N26) - (N46 - parcelasFuro*J23b)/denom;
+            N63 = (J23b + N26) - (N46 - parcelasFuro*J23b)/denom;
+          } else {
+            J63 = D23b + N26;
+            N63 = J23b + N26;
+          }
+        }
+      }
+    }
+
+    if(!podeCalcular){
+      el('out-novaParcela').innerHTML = grande(0);
+      el('out-novaParcelaRange').textContent = 'Informe um lance e um prazo de furo válido para calcular.';
+      el('out-novaParcelaSegundaWrap').hidden = true;
+      el('out-prazoRestante').textContent = '—';
+      el('novaParcelaNote').textContent = '';
+      el('stickyParcelaLance').textContent = '';
+      el('stickyParcelaLanceLabel').textContent = '';
+    } else {
+      var inicioFaixa = parcelasPagas + parcelasFuro + 1;
+      el('out-novaParcela').innerHTML = grande(J63);
+      el('out-prazoRestante').textContent = denom + ' parcela(s)';
+
+      if(temFaixa2){
+        el('out-novaParcelaRange').textContent = inicioFaixa+'ª parcela em diante (1ª metade do plano)';
+        el('out-novaParcelaSegundaWrap').hidden = false;
+        el('out-novaParcelaSegundaLabel').textContent = '2ª metade do plano';
+        el('out-novaParcelaSegunda').textContent = moeda(N63);
+      } else {
+        el('out-novaParcelaRange').textContent = inicioFaixa+'ª – '+prazoCliente+'ª parcela';
+        el('out-novaParcelaSegundaWrap').hidden = true;
+      }
+      el('novaParcelaNote').textContent = 'As '+parcelasFuro+' parcela(s) seguintes à '+parcelasPagas+'ª são quitadas pelo lance (furo); a nova parcela vale a partir da '+inicioFaixa+'ª.';
+
+      el('stickyParcelaLance').textContent = moeda(J63);
+      el('stickyParcelaLanceLabel').textContent = 'nova parcela após o lance';
+    }
+  }
+
+  recalc();
+})();
+</script>
+</body>
+</html>
